@@ -16,9 +16,8 @@ Currently, every train route in our application is displaying at the same time! 
 1. After your installation has finished, open `src/index.js`, and import `BrowserRouter` as `Router` from `react-router-dom`.
 1. Wrap the `<App />` component in a `<Router />`, so we can implement `<Link />`s and `<Route />`s.
 1. Open `src/Navbar.jsx`. In the `<nav>`, create a `<Link />` that directs the user to `/union-square`, with the text content `"Union Square-14th St"`, and another that directs the user to `/`, with the text content `"Home"`.
-1. In `src/App.jsx`, wrap the `<Station />` tags in one `<Switch />`.
-1. In `src/App.jsx`, add a new `<Route />`, and make its contents an `<h2>` with the text `"Welcome Home!"`.
-1. In `src/App.jsx`, wrap the first `<Station />` component within a `<Route />`. This `<Route />` should have a `path` that corresponds to the `to` attribute of our newly created `<Link />`, and give it the `exact` attribute.
+1. In `src/App.jsx`, add a new `<Route />` with a path of `/` and make its contents an `<h2>` with the text `"Welcome Home!"`. Give it the `exact` attribute.
+1. In `src/App.jsx`, wrap the first `<Station />` component within a `<Route />`. This `<Route />` should have a `path` that corresponds to the `to` attribute of our newly created `<Link />`.
 1. Ensure that the `<Station />` with the trains from Union Square only displays when you click the Union Square link.
 1. Once this functionality has been achieved, add corresponding links and routes for the rest of the stations (`/times-square`, `/atlantic-avenue`, and `/fulton-street`).
 
