@@ -1,38 +1,150 @@
 .App {
+  background-color: black;
+  min-height: 100vh;
+  width: 100vw;
+}
+
+div, p, h1, h3, h4, a {
+  font-family: 'Helvetica';
+  color: #BBBBBB;
+}
+
+header {
+  width: 100vw;
+  border-bottom: 1px solid white;
+  padding: 20px 0; 
+}
+
+nav {
+  padding: 5px;
+  margin: 5px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+a, a:visited {
+  color: black;
+  text-decoration: none;
+  transition: all 0.2s;
+  box-sizing: border-box;
+  border: 1px solid white;
+  padding: 5px;
+}
+
+a:hover {
+  color: blue;
+  border-bottom: 2px solid blue;
+}
+
+h1 {
+  margin: 0 auto;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+.train-times {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border: 1px solid white;
+  border-radius: 6px;
+  min-width: 700px;
+  width: 700px;
+  margin: 10px auto;
+  padding: 10px 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.train h3 {
+  text-align: center;
+  margin: 10px auto;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.arrivals {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  flex-wrap: wrap;
+  height: 250px;
+  width: 300px;
+  border: 1px solid white;
+  border-radius: 6px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.arrivals-container h4 {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.single-train {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.single-train div {
+  border-radius: 100%;
+  border: 1px solid white;
+  width: 18px;
+  height: 18px;
+  text-align: center;
+  margin: 0 5px;
+  padding: 2px;
+  font-weight: 700;
+}
+
+.route-A, .route-C, .route-E {
+  background-color: blue;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.route-J, .route-Z {
+  background-color: brown;
+  color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.route-4, .route-5, .route-6 {
+  background-color: green;
+  color: white;
+}
+
+.route-N, .route-Q, .route-R, .route-W {
+  background-color: yellow;
+  color: black;
+}
+
+.route-L, .route-S {
+  background-color: grey;
+  color: white;
+}
+
+.route-1, .route-2, .route-3 {
+  background-color: red;
+  color: white;
+}
+
+.route-7 {
+  background-color: purple;
+  color: white;
+}
+
+.route-B, .route-D, .route-F, .route-M {
+  background-color: orange;
+  color: white;
+}
+
+@media screen and (max-width: 700px) {
+  .train-times {
+    flex-direction: column;
+    min-width: 90vw;
+    width: 90vw;
   }
-  to {
-    transform: rotate(360deg);
+
+  .arrivals {
+    width: 75vw;
+    margin: 10px auto;
   }
 }

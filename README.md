@@ -1,68 +1,30 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# React Train Router
 
-## Available Scripts
+<img src="./map.jpeg" width="600px"/>
 
-In the project directory, you can run:
+## Setup
+As always,
+1. Fork,
+1. Clone,
+1. Install dependencies,
+1. Get hacking!
 
-### `yarn start`
+## Instructions
+Currently, every train route in our application is displaying at the same time! Let's leverage React Router to only render the stations we're currently looking for in our nav bar.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1. Before we can implement React Router, we have to install it. Run `npm install react-router-dom` within this folder to install it.
+1. After your installation has finished, open `src/index.js`, and import `BrowserRouter` as `Router` from `react-router-dom`.
+1. Wrap the `<App />` component in a `<Router />`, so we can implement `<Link />`s and `<Route />`s.
+1. Open `src/Navbar.jsx`. In the `<nav>`, create a `<Link />` that directs the user to `/union-square`, with the text content `"Union Square-14th St"`, and another that directs the user to `/`, with the text content `"Home"`.
+1. In `src/App.jsx`, wrap the `<Station />` tags in one `<Switch />`.
+1. In `src/App.jsx`, add a new `<Route />`, and make its contents an `<h2>` with the text `"Welcome Home!"`.
+1. In `src/App.jsx`, wrap the first `<Station />` component within a `<Route />`. This `<Route />` should have a `path` that corresponds to the `to` attribute of our newly created `<Link />`, and give it the `exact` attribute.
+1. Ensure that the `<Station />` with the trains from Union Square only displays when you click the Union Square link.
+1. Once this functionality has been achieved, add corresponding links and routes for the rest of the stations (`/times-square`, `/atlantic-avenue`, and `/fulton-street`).
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+#### Bonus
+1. Add one station to the home page.
+1. Look at the documentation for the API and add your own `<Station />` components with different stations and corresponding `<Route />`s.
 
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Acknowledgments
+Thank you to the [MTAPI](https://github.com/jonthornton/MTAPI) for converting the GSFS from the MTA Real-Time API to JSON. 
