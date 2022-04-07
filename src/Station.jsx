@@ -10,10 +10,11 @@ function Station(props) {
       const response = await axios.get(
         `https://api.wheresthefuckingtrain.com/by-id/${props.stationId}`
       );
+      // console.log("api call");
       setStationInfo(response.data.data[0]);
     };
     getTrains();
-  }, []);
+  }, [props.stationId]);
 
   if (!stationInfo) return <h3>Loading...</h3>;
 
@@ -21,8 +22,8 @@ function Station(props) {
     <div className="train">
       <h3>{stationInfo.name}</h3>
       <div className="train-times">
-        <Trains arrivals={stationInfo.N} direction="Northbound"/>
-        <Trains arrivals={stationInfo.S} direction="Southbound"/>
+        <Trains arrivals={stationInfo.N} direction="Northbound" />
+        <Trains arrivals={stationInfo.S} direction="Southbound" />
       </div>
     </div>
   );
